@@ -1,4 +1,8 @@
 import logging
+from pathlib import Path
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -11,6 +15,9 @@ from app.modules.semantic_matcher.router import router as matching_router
 from app.modules.dependency_validator.router import router as validation_router
 from app.modules.review_inbox.router import router as review_router
 from app.modules.demo.router import router as demo_router
+
+# Frontend build directory
+FRONTEND_DIST = Path(__file__).resolve().parents[2] / "frontend" / "dist"
 
 # Configure logging
 logging.basicConfig(
@@ -70,6 +77,17 @@ app.include_router(validation_router, prefix=settings.API_V1_STR)
 app.include_router(review_router, prefix=settings.API_V1_STR)
 app.include_router(demo_router, prefix=settings.API_V1_STR)
 
+# Serve React frontend
+if FRONTEND_DIST.exists():
+    app.mount(
+        "/assets",
+        StaticFiles(directory=FRONTEND_DIST / "assets"),
+        name="frontend-assets"
+    )
+
+    @app.get("/", include_in_schema=False)
+    async def serve_frontend():
+        return FileResponse(FRONTEND_DIST / "index.html")
 
 if __name__ == "__main__":
     import uvicorn
