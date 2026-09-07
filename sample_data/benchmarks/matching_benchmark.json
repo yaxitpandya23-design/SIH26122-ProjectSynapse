@@ -1,0 +1,146 @@
+[
+  {
+    "scenario_id": "SCENARIO-A",
+    "description": "Partial scope mechanical spool erection with unlisted field references",
+    "field_statement": "Spool erection for Line 24 near Pump House completed today at SV-01.",
+    "expected_discipline": "MECHANICAL",
+    "expected_top_code": "ACT-5020",
+    "expected_decision": "NEEDS_REVIEW",
+    "notes": "Partial scope and discrepancy flags: spool erection is a sub-component of manifold piping & actuator mounting at SV-01, and mentions unlisted Line 24 / Pump House. Top candidate is ACT-5020 but flagged for human review."
+  },
+  {
+    "scenario_id": "SCENARIO-A2",
+    "description": "High-confidence specific mechanical valve station manifold piping and actuator mounting",
+    "field_statement": "Valve station manifold piping and actuator mounting completed today at SV-01.",
+    "expected_discipline": "MECHANICAL",
+    "expected_top_code": "ACT-5020",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Exact milestone scope and facility match at SV-01; confidence >= 0.85."
+  },
+  {
+    "scenario_id": "SCENARIO-B",
+    "description": "Ambiguous welding near crossing",
+    "field_statement": "Pipeline welding completed near the crossing.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-2030",
+    "expected_decision": "NEEDS_REVIEW",
+    "notes": "Ambiguous between mainline welding (ACT-2030), tie-in golden joints (ACT-2070), and HDD crossing (ACT-3010). Narrow score gap triggers arbitration and needs review."
+  },
+  {
+    "scenario_id": "SCENARIO-C",
+    "description": "Irrelevant / non-pipeline site activity",
+    "field_statement": "Security gate painting completed.",
+    "expected_discipline": "GENERAL",
+    "expected_top_code": null,
+    "expected_decision": "UNMATCHED",
+    "notes": "No pipeline activities describe gate painting; confidence score must remain strictly below 0.50."
+  },
+  {
+    "scenario_id": "SCENARIO-04",
+    "description": "Mainline trench excavation with chainage",
+    "field_statement": "Excavator gang dug 620m of pipeline trench to standard 2.2m depth between Ch 08+400 and Ch 09+020.",
+    "expected_discipline": "CIVIL",
+    "expected_top_code": "ACT-1030",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "High match with Trench Excavation for 16-inch Pipeline."
+  },
+  {
+    "scenario_id": "SCENARIO-05",
+    "description": "Pipe stringing along right of way",
+    "field_statement": "Stringing crew hauled and laid out 48 joints of 16-inch API 5L X-65 pipes along ROW near Ch 07+500.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-2010",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Line Pipe Hauling and Stringing along ROW."
+  },
+  {
+    "scenario_id": "SCENARIO-06",
+    "description": "Mainline joint welding with joint counts",
+    "field_statement": "Mainline welding team completed 32 butt-weld joints with full root and hot pass near Ch 04+200.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-2030",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Mainline Pipe Joint Shielded Metal Arc Welding."
+  },
+  {
+    "scenario_id": "SCENARIO-07",
+    "description": "Radiography and non-destructive testing",
+    "field_statement": "Radiography crew inspected 28 joints using internal X-ray crawler; 27 joints accepted, 1 repair marked.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-2040",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Non-Destructive Testing (100% Radiography/UT)."
+  },
+  {
+    "scenario_id": "SCENARIO-08",
+    "description": "Civil foundation concrete casting for valve station",
+    "field_statement": "Civil team cast 85 cum of reinforced concrete raft for Valve Station SV-01 bund wall.",
+    "expected_discipline": "CIVIL",
+    "expected_top_code": "ACT-5010",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Valve Station 01 Civil Raft & Bund Wall Casting."
+  },
+  {
+    "scenario_id": "SCENARIO-09",
+    "description": "Horizontal directional drilling river crossing",
+    "field_statement": "Drilling rig completed 180m pilot hole boring under Burhi Dihing river bed.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-3010",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches HDD River Crossing Installation - Burhi Dihing."
+  },
+  {
+    "scenario_id": "SCENARIO-10",
+    "description": "Hydrostatic pressure testing",
+    "field_statement": "Hydrostatic pressure test holding at 145 bar for 24 hours on Section 1 pipeline.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-4010",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Hydrostatic Pressure Testing Section 1."
+  },
+  {
+    "scenario_id": "SCENARIO-11",
+    "description": "ROW clearing and grading",
+    "field_statement": "Clearing and grading of ROW completed for 1.8 km between Ch 12+200 and Ch 14+000 today using two D8 bulldozers.",
+    "expected_discipline": "CIVIL",
+    "expected_top_code": "ACT-1020",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Right of Way (ROW) Clearing and Grading."
+  },
+  {
+    "scenario_id": "SCENARIO-12",
+    "description": "Cold field pipe bending",
+    "field_statement": "Bending machine fabricated 14 cold field pipe bends for terrain slope near Ch 18+400.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-2020",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Cold Field Pipe Bending for Terrain Alignment."
+  },
+  {
+    "scenario_id": "SCENARIO-13",
+    "description": "Deep well anode groundbed cathodic protection",
+    "field_statement": "Drilling completed for deep well anode groundbed CP-02 to 75m depth; coke breeze backfill poured.",
+    "expected_discipline": "ELECTRICAL",
+    "expected_top_code": "ACT-7010",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Deep Well Anode Groundbed Installation (CP System)."
+  },
+  {
+    "scenario_id": "SCENARIO-14",
+    "description": "SCADA automation telemetry panel",
+    "field_statement": "RTU panel mounted on pedestal and 24V solar charge controller wired at SV-01.",
+    "expected_discipline": "ELECTRICAL",
+    "expected_top_code": "ACT-6010",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches SCADA RTU Panel and Solar Power System Installation."
+  },
+  {
+    "scenario_id": "SCENARIO-15",
+    "description": "Dewatering and air drying",
+    "field_statement": "Four foam pigs launched with dry oil-free air to achieve minus 20 degree dew point in section 1.",
+    "expected_discipline": "PIPING",
+    "expected_top_code": "ACT-4020",
+    "expected_decision": "AUTO_MATCHED",
+    "notes": "Matches Dewatering Swabbing and Dry Air Drying."
+  }
+]

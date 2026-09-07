@@ -1,0 +1,21 @@
+activity_code,name,discipline,wbs_code,wbs_name,planned_start,planned_finish,planned_duration_days,planned_quantity,uom,is_critical,location_scope,predecessors
+ACT-1010,Topographical Survey and Peg Marking,CIVIL,1.1.1,Pre-Construction Engineering,2026-10-01,2026-10-07,7,30,KM,True,Ch 0+000 to Ch 30+000,
+ACT-1020,Right of Way (ROW) Clearing and Grading,CIVIL,1.1.2,ROW Preparation,2026-10-08,2026-10-25,18,30,KM,True,Ch 0+000 to Ch 30+000,ACT-1010
+ACT-1030,Trench Excavation for 16-inch Pipeline,CIVIL,1.2.1,Civil Earthworks,2026-10-20,2026-11-15,27,30000,M,True,Ch 0+000 to Ch 30+000,ACT-1020:SS:12
+ACT-2010,Line Pipe Hauling and Stringing along ROW,PIPING,1.2.2,Piping & Welding,2026-10-22,2026-11-12,22,2500,JOINTS,False,Ch 0+000 to Ch 30+000,ACT-1020:SS:14
+ACT-2020,Cold Field Pipe Bending for Terrain Alignment,PIPING,1.2.2,Piping & Welding,2026-10-25,2026-11-10,17,350,JOINTS,False,Ch 5+000 to Ch 25+000,ACT-2010:SS:3
+ACT-2030,Mainline Pipe Joint Shielded Metal Arc Welding,PIPING,1.2.2,Piping & Welding,2026-10-27,2026-11-25,30,2400,JOINTS,True,Ch 0+000 to Ch 30+000,ACT-2010:SS:5
+ACT-2040,Non-Destructive Testing (100% Radiography/UT),PIPING,1.2.3,Quality Inspection,2026-10-29,2026-11-28,31,2400,JOINTS,True,Ch 0+000 to Ch 30+000,ACT-2030:SS:2
+ACT-2050,Field Joint Coating & Holiday Spark Testing,PIPING,1.2.3,Quality Inspection,2026-10-31,2026-11-30,31,2400,JOINTS,True,Ch 0+000 to Ch 30+000,ACT-2040:SS:2
+ACT-2060,Pipe Lowering into Trench and Padding,PIPING,1.2.4,Lowering & Tie-in,2026-11-05,2026-12-05,31,30000,M,True,Ch 0+000 to Ch 30+000,ACT-1030;ACT-2050
+ACT-1040,Trench Backfilling with Soft Soil Cushion,CIVIL,1.2.5,Restoration,2026-11-08,2026-12-10,33,30000,M,True,Ch 0+000 to Ch 30+000,ACT-2060:SS:3
+ACT-3010,HDD River Crossing Installation - Burhi Dihing,PIPING,1.3.1,Special Crossings,2026-11-01,2026-11-20,20,650,M,True,Ch 14+200 to Ch 14+850,ACT-1020
+ACT-2070,Mainline Tie-in Welding & Golden Joints,PIPING,1.2.4,Lowering & Tie-in,2026-12-06,2026-12-15,10,25,JOINTS,True,Ch 0+000 to Ch 30+000,ACT-2060;ACT-3010
+ACT-4010,Hydrostatic Pressure Testing Section 1,PIPING,1.4.1,Testing & Precommissioning,2026-12-16,2026-12-22,7,30,KM,True,Ch 0+000 to Ch 30+000,ACT-2070;ACT-1040
+ACT-4020,Dewatering Swabbing and Dry Air Drying,PIPING,1.4.1,Testing & Precommissioning,2026-12-23,2026-12-28,6,30,KM,True,Ch 0+000 to Ch 30+000,ACT-4010
+ACT-5010,Valve Station 01 Civil Raft & Bund Wall Casting,CIVIL,2.1.1,Sectional Valve Stations,2026-10-15,2026-11-05,22,450,CUM,False,SV-01 Ch 15+000,ACT-1020
+ACT-5020,Valve Station 01 Manifold Piping & Actuator Mounting,MECHANICAL,2.1.2,Sectional Valve Stations,2026-11-10,2026-11-30,21,1,UNITS,False,SV-01 Ch 15+000,ACT-5010
+ACT-6010,SCADA RTU Panel and Solar Power System Installation,ELECTRICAL,3.1.1,Automation & Telemetry,2026-11-20,2026-12-10,21,1,UNITS,False,SV-01 Ch 15+000,ACT-5010
+ACT-7010,Deep Well Anode Groundbed Installation (CP System),ELECTRICAL,3.2.1,Cathodic Protection,2026-11-15,2026-12-05,21,4,NOS,False,Ch 0+000 to Ch 30+000,ACT-1020
+ACT-4030,Nitrogen Purging & Line Pack Preservation,PIPING,1.4.2,Commissioning,2026-12-29,2026-12-31,3,30,KM,True,Ch 0+000 to Ch 30+000,ACT-4020
+ACT-9000,Final Project Handover to Oil India Operations,GENERAL,4.1.1,Project Closeout,2027-01-01,2027-01-05,5,1,UNITS,True,Duliajan Pipeline Terminal,ACT-4030;ACT-5020;ACT-6010;ACT-7010
